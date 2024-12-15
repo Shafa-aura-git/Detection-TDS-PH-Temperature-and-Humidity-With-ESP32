@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-breadboard-half", "id": "bb1", "top": 102.6, "left": -208.4, "attrs": {} },
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 86.4, "left": 148.84, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "pot1", "top": -30.1, "left": -77, "attrs": {} },
+    { "type": "wokwi-dht22", "id": "dht1", "top": -47.7, "left": -168.6, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "pot2", "top": -30.1, "left": 38.2, "attrs": {} }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "esp:3V3", "bb1:tp.25", "red", [ "h0" ] ],
+    [ "esp:GND.1", "bb1:tn.25", "black", [ "h-28.65", "v-115.2" ] ],
+    [ "pot2:VCC", "bb1:tp.24", "red", [ "v0" ] ],
+    [ "pot1:VCC", "bb1:tp.14", "red", [ "v0" ] ],
+    [ "pot2:GND", "bb1:tn.22", "black", [ "v0" ] ],
+    [ "pot1:GND", "bb1:tn.12", "black", [ "v0" ] ],
+    [ "pot2:SIG", "bb1:28t.b", "orange", [ "v0" ] ],
+    [ "esp:33", "bb1:28t.d", "orange", [ "h0" ] ],
+    [ "pot1:SIG", "bb1:16t.b", "gold", [ "v0" ] ],
+    [ "dht1:GND", "bb1:tn.6", "black", [ "v0" ] ],
+    [ "dht1:VCC", "bb1:tp.3", "red", [ "v0" ] ],
+    [ "dht1:SDA", "bb1:5t.c", "green", [ "v0" ] ],
+    [ "esp:32", "bb1:5t.e", "green", [ "h-19.05", "v38.4", "h-278.4" ] ],
+    [ "esp:35", "bb1:16t.e", "gold", [ "h-38.25", "v28.8" ] ]
+  ],
+  "dependencies": {}
+}
